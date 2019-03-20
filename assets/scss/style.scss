@@ -1,5 +1,16 @@
+@import 'bulma-overrides';
 @import '../../node_modules/bulma/bulma.sass';
 
-.page-header {
+header {
+	margin: 2rem 0;
+
+	nav {
+		margin: 2rem 0;	
+	}
+}
+
+footer {
+	border-top: 1px solid #ccc;
+	padding-top: 2rem;
 	margin: 4rem 0;
 }

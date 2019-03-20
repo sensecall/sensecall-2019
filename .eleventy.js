@@ -1,5 +1,6 @@
+
 module.exports = function({collections}) {
-  return `<ul>
-${collections.post.map((post) => `<li>${ post.data.title }</li>`).join("\n")}
-</ul>`;
+	return `<ul>
+	${collections.post.map((post) => `<li>${ post.data.title }</li>`).join("\n")}
+	</ul>`;
 };
