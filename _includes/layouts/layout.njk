@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>{% include "css/style.css" %}</style>
+	<title>{{ title }}</title>
+</head>
+<body class="{{ bodyClass }}" >
+	<section class="section">
+		<div class="container">
+			{% include "header.njk" %}
+
+			<main role="main">
+				{{ content | safe }}
+			</main>
+
+			{% include "footer.njk" %}
+			<script></script>
+		</div>
+	</section>
+</body>
+</html>
