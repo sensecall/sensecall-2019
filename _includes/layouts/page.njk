@@ -9,10 +9,19 @@
 <body class="{{ bodyClass }}" >
 	<section class="section">
 		<div class="container">
-			{% include "header--home.njk" %}
+			{% include "header--page.njk" %}
 
 			<main role="main">
-				{{ content | safe }}
+				<div class="columns">
+					<div class="column is-two-thirds">
+						<div class="content">
+							<h1>
+								{{ title }}
+							</h1>
+							{{ content | safe }}
+						</div>
+					</div>
+				</div>
 			</main>
 
 			{% include "footer.njk" %}

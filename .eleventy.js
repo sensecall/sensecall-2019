@@ -1,6 +1,5 @@
-
-module.exports = function({collections}) {
-	return `<ul>
-	${collections.post.map((post) => `<li>${ post.data.title }</li>`).join("\n")}
-	</ul>`;
+module.exports = function(eleventyConfig) {  
+	eleventyConfig.addFilter("makeUppercase", function(value) {
+		return `<h1>${this.makeUppercase(name)}</h1>`;
+	});
 };

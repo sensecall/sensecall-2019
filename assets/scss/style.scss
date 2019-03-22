@@ -1,16 +1,113 @@
-@import 'bulma-overrides';
+// set up some overrides
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Serif:400,400i,700,700i');
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700,700i');
+
+$body-size: 19px;
+$family-serif: 'IBM Plex Serif', serif;
+$family-sans-serif: 'IBM Plex Sans', sans-serif;
+$family-primary: $family-sans-serif;
+$title-weight: bold;
+
+// then import bulma scss
 @import '../../node_modules/bulma/bulma.sass';
+
+
+// Then do your thing
+a:focus {
+  background-color: #ffbf47;
+  outline: 3px solid #ffbf47;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: $family-sans-serif;
+	font-weight: bold;
+}
+
+body {
+	background: url('assets/images/background.svg') 16px 16px no-repeat;
+	background: linear-gradient(to bottom left, #f5f9ff, #fff);
+}
 
 header {
 	margin: 2rem 0;
 
 	nav {
-		margin: 2rem 0;	
+		margin: 2rem 0;
 	}
 }
 
 footer {
-	border-top: 1px solid #ccc;
 	padding-top: 2rem;
 	margin: 4rem 0;
+}
+
+.wave {
+	cursor: default;
+	&:hover {
+		display: inline-block;
+		animation: waver 0.25s alternate infinite;
+		transform-origin: 50% 90%;
+		animation-timing-function: ease-in-out;
+	}
+}
+
+.love {
+	cursor: default;
+	&:hover {
+		color: $red;
+		text-shadow: 0 0 20px $red, 0 0 1px white;
+		display: inline-block;
+		animation: lover 1s infinite;
+		transform-origin: 50% 100%;
+		animation-timing-function: ease-in-out;
+	}
+}
+
+@keyframes waver {
+	0% {transform: rotate(-25deg);}
+	100% {transform: rotate(25deg);}
+}
+
+@keyframes lover {
+	0% {transform: scale(1);}
+	15% {transform: scale(1.2);}
+	30% {transform: scale(.8);}
+	45% {transform: scale(1.2);}
+	60% {transform: scale(.95);}
+}
+
+@keyframes bang {
+  from {
+    transform: translate3d(0,0,0);
+    opacity: 1;
+  }
+}
+.goal {
+  cursor: pointer;
+  position: relative;
+  i {
+    position: absolute;
+    display: block;
+    left: 50%;
+    top: 50%;
+    width: 3px;
+    height: 5px;
+    background: red;
+    opacity: 0;
+  }
+  &:hover {
+    @for $i from 1 through 50 {
+      i:nth-of-type(#{$i}) {
+        transform: translate3d(random(200) - 100 + px,random(100) - 100 + px,0) rotate(random(360) + deg) scale(0);
+        background: hsla(random(360),100%,50%,1);
+        animation: bang 1s ease-out forwards;
+        opacity: 0;
+      }
+    }
+  }
 }

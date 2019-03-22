@@ -1,9 +1,10 @@
 ---
-title: Dan Sensecall
+title: Writing
 subtitle: Freelance user experience and service designer
 layout: layouts/page.njk
 ---
 
+{% if collections.post.length %}
 {%- for post in collections.post -%}
 <h2 class="is-size-3">
 	<a href="{{post.url}}">{{ post.data.title }}</a>
@@ -19,3 +20,12 @@ layout: layouts/page.njk
 </ul>
 {% endif %}
 {%- endfor -%}
+{% else %}
+<p>
+	It's all in my head&hellip; at least until I finish setting up this site.
+</p>
+
+<p>
+	More soon, hopefully. 🤞
+</p>
+{% endif %}
