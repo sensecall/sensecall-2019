@@ -1,0 +1,30 @@
+{
+  "name": "sensecall-2019",
+  "version": "1.0.0",
+  "description": "Using [11ty](https://github.com/11ty/eleventy/) and [Bulma](https://github.com/jgthms/bulma/) CSS framework",
+  "main": ".eleventy.js",
+  "dependencies": {
+    "bulma": "^0.7.4",
+    "gulp-concat": "^2.6.1",
+    "gulp-sass": "^4.0.2",
+    "gulp": "^4.0.0",
+    "gulp-uglify": "^3.0.2",
+    "gutenberg-web-type": "^1.2.3",
+    "nunjucks": "^3.2.0",
+    "require-dir": "^1.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sensecall/sensecall-2019.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sensecall/sensecall-2019/issues"
+  },
+  "homepage": "https://github.com/sensecall/sensecall-2019#readme"
+}
