@@ -1,32 +1,51 @@
 const gulp  = require('gulp');
+const uglify = require('gulp-uglify');
+const concat = require('gulp-concat');
+const imagemin = require('gulp-imagemin');
 
-/**
-  Our gulp tasks live in their own files,
-  for the sake of clarity.
- */
-require('require-dir')('./gulp-tasks');
+var sass    = require("gulp-sass");
 
-/*
-  Watch folders for changess
-*/
+
+//  Watch folders for changes
 gulp.task("watch", function() {
   gulp.watch('./assets/scss/**/*.scss', gulp.parallel('css'));
   gulp.watch('./assets/js/**/*.js', gulp.parallel('js'));
 });
 
 
-/*
-  Let's build this sucker.
-*/
+gulp.task('js', function() {
+  return gulp.src("./assets/js/**/*.js")
+  .pipe(concat('scripts.js'))
+  .pipe(uglify())
+  .pipe(gulp.dest('./_includes/js'));
+});
+
+gulp.task('css', function() {
+  return gulp.src('assets/scss/*.scss')
+  .pipe(sass({
+    outputStyle: 'compressed'
+  })
+  .on('error', sass.logError))
+  .pipe(gulp.dest('./_includes/css'));
+});
+
+gulp.task('images', () =>
+  gulp.src('assets/images/*')
+  .pipe(imagemin({
+    optimizationLevel: 8
+  }))
+  .pipe(gulp.dest('_site/assets/images'))
+  );
+
+// BUILD
 gulp.task('build', gulp.parallel(
   'css',
-  'js'
-));
+  'js',
+  'images'
+  ));
 
-/*
-  Build and watch things during dev
-*/
+// BUILD AND WATCH
 gulp.task('dev', gulp.series(
   'build',
   'watch'
-));
+  ));
