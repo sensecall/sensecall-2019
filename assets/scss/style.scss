@@ -1,6 +1,8 @@
 $font-size-base: 19;
+$font-weight-base: $font-weight-light;
 $font-family-base: 'IBM Plex Sans', sans-serif;
 $link-color: #3273dc;
+$body-color: #4a4a4a;
 
 // Required
 @import "node_modules/bootstrap/scss/functions";
@@ -13,10 +15,13 @@ $link-color: #3273dc;
 @import "node_modules/bootstrap/scss/images";
 @import "node_modules/bootstrap/scss/code";
 @import "node_modules/bootstrap/scss/grid";
+@import "node_modules/bootstrap/scss/nav";
+@import "node_modules/bootstrap/scss/utilities";
+
 
 // set up some overrides
-@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Serif:400,400i,700,700i');
-@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700,700i');
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Serif:300,400,400i,700,700i');
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,400,400i,700,700i');
 
 body {
 	background: linear-gradient(to bottom left, #f5f9ff, #fff);
@@ -31,7 +36,7 @@ header {
 	margin: 2rem 0;
 
 	nav {
-		margin: 2rem 0;
+		margin: 8rem 0 2rem 0;
 	}
 }
 

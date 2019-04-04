@@ -5,23 +5,65 @@
 
 <body class="{{ bodyClass }}" >
 	<div class="container">
-		<div class="row">
-			<header class="col page-header">
-				{% include 'nav.njk' %}
-				{% include "header--home.njk" %}
-			</header>
-		</div>
+		<header>
+			<nav>
+				<ul class="list-inline">
+					<li class="list-inline-item">
+						<a href="/"><b>Dan Sensecall</b></a>
+					</li>
+					<li class="list-inline-item{% if title == 'Writing' %} is-active{% endif %}">
+						<a href="/writing">Writing</a>
+					</li>
+					<li class="list-inline-item{% if title == 'Contact' %} is-active{% endif %}">
+						<a href="/contact">Contact</a>
+					</li>
+				</ul>
+			</nav>
+			
+			{% if page.url == '/' %}
+			<h1 class="font-weight-bold mb-0"><a href="#">{{ title }}</a></h1>
+			{%- if subtitle %}<h2 class="h5 text-muted">{{ subtitle }}</h2>{% endif %}
+			{% endif %}
+		</header>
+
 
 		<div class="row">
 			<div class="col-md-8">
 				<main role="main">
+					{% if page.url != '/' %}
+					<h1>
+						{{ title }}
+					</h1>
+					{% endif %}
+
 					{{ content | safe }}
 				</main>
 			</div>
 		</div>
 
-		{% include "footer.njk" %}
-		<script></script>
-	</div>
-</body>
-</html>
+		<footer>
+			<div class="row justify-content-between">
+				<nav class="col-sm order-sm-last">
+					<ul class="list-inline text-sm-right">
+						<li class="list-inline-item">
+							<a href="https://twitter.com/sensecall">Twitter</a>
+						</li>
+						<li class="list-inline-item">
+							<a href="https://linkedin.com/in/sensecall">LinkedIn</a>
+						</li>
+						<li class="list-inline-item">
+							<a href="/cv">CV</a>
+						</li>
+					</ul>
+				</nav>
+
+
+				<div class="col-sm">
+					<p class="text-muted">
+						&copy; Dan Sensecall 2009&mdash;2019
+					</p>
+				</div>
+			</div>
+		</footer>
+	</body>
+	</html>
