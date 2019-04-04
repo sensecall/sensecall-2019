@@ -1,13 +1,13 @@
-<nav class="breadcrumb has-dot-separator is-pulled-left" aria-label="breadcrumbs">
-	<ul>
-		<li>
-			<a href="/" class="has-text-grey-dark"><b>Dan Sensecall</b></a>
+<nav class="is-pulled-left" aria-label="breadcrumbs">
+	<ul class="nav">
+		<li class="nav-item">
+			<a href="/" class="nav-link"><b>Dan Sensecall</b></a>
 		</li>
-		<li{% if title == 'Writing' %} class="is-active"{% endif %}>
-			<a href="/writing">Writing</a>
+		<li class="nav-item{% if title == 'Writing' %} is-active{% endif %}">
+			<a href="/writing" class="nav-link">Writing</a>
 		</li>
-		<li{% if title == 'Contact' %} class="is-active"{% endif %}>
-			<a href="/contact">Contact</a>
+		<li class="nav-item{% if title == 'Contact' %} is-active{% endif %}">
+			<a href="/contact" class="nav-link">Contact</a>
 		</li>
 	</ul>
 </nav>

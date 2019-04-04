@@ -1,36 +1,30 @@
+$font-size-base: 19;
+$font-family-base: 'IBM Plex Sans', sans-serif;
+$link-color: #3273dc;
+
+// Required
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins";
+
+// Optional
+@import "node_modules/bootstrap/scss/reboot";
+@import "node_modules/bootstrap/scss/type";
+@import "node_modules/bootstrap/scss/images";
+@import "node_modules/bootstrap/scss/code";
+@import "node_modules/bootstrap/scss/grid";
+
 // set up some overrides
 @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Serif:400,400i,700,700i');
 @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700,700i');
 
-$body-size: 19px;
-$family-serif: 'IBM Plex Serif', serif;
-$family-sans-serif: 'IBM Plex Sans', sans-serif;
-$family-primary: $family-sans-serif;
-$title-weight: bold;
-
-// then import bulma scss
-@import '../../node_modules/bulma/bulma.sass';
-
-
-// Then do your thing
-a:focus {
-  background-color: #ffbf47;
-  outline: 3px solid #ffbf47;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	font-family: $family-sans-serif;
-	font-weight: bold;
-}
-
 body {
-	background: url('assets/images/background.svg') 16px 16px no-repeat;
 	background: linear-gradient(to bottom left, #f5f9ff, #fff);
+}
+
+a:focus {
+	background-color: #ffbf47;
+	outline: 3px solid #ffbf47;
 }
 
 header {
@@ -46,9 +40,17 @@ footer {
 	margin: 4rem 0;
 }
 
+img {
+	height: auto;
+	max-width: 100%;
+}
+
+
+// Animations
 .wave {
 	cursor: default;
-	&:hover {
+	&:hover,
+	&:focus {
 		display: inline-block;
 		animation: waver 0.25s alternate infinite;
 		transform-origin: 50% 90%;
@@ -58,9 +60,10 @@ footer {
 
 .love {
 	cursor: default;
-	&:hover {
-		color: $red;
-		text-shadow: 0 0 20px $red, 0 0 1px white;
+	&:hover,
+	&:focus {
+		color: red;
+		text-shadow: 0 0 20px red, 0 0 1px white;
 		display: inline-block;
 		animation: lover 1s infinite;
 		transform-origin: 50% 100%;
@@ -82,32 +85,33 @@ footer {
 }
 
 @keyframes bang {
-  from {
-    transform: translate3d(0,0,0);
-    opacity: 1;
-  }
+	from {
+		transform: translate3d(0,0,0);
+		opacity: 1;
+	}
 }
 .goal {
-  cursor: pointer;
-  position: relative;
-  i {
-    position: absolute;
-    display: block;
-    left: 50%;
-    top: 50%;
-    width: 3px;
-    height: 5px;
-    background: red;
-    opacity: 0;
-  }
-  &:hover {
-    @for $i from 1 through 50 {
-      i:nth-of-type(#{$i}) {
-        transform: translate3d(random(200) - 100 + px,random(100) - 100 + px,0) rotate(random(360) + deg) scale(0);
-        background: hsla(random(360),100%,50%,1);
-        animation: bang 1s ease-out forwards;
-        opacity: 0;
-      }
-    }
-  }
+	cursor: pointer;
+	position: relative;
+	i {
+		position: absolute;
+		display: block;
+		left: 50%;
+		top: 50%;
+		width: 3px;
+		height: 5px;
+		background: red;
+		opacity: 0;
+	}
+	&:hover,
+	&:focus {
+		@for $i from 1 through 50 {
+			i:nth-of-type(#{$i}) {
+				transform: translate3d(random(200) - 100 + px,random(100) - 100 + px,0) rotate(random(360) + deg) scale(0);
+				background: hsla(random(360),100%,50%,1);
+				animation: bang 1s ease-out forwards;
+				opacity: 0;
+			}
+		}
+	}
 }
