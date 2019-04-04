@@ -3,10 +3,10 @@
 		<li>
 			<a href="/" class="has-text-grey-dark"><b>Dan Sensecall</b></a>
 		</li>
-		<li>
+		<li{% if title == 'Writing' %} class="is-active"{% endif %}>
 			<a href="/writing">Writing</a>
 		</li>
-		<li>
+		<li{% if title == 'Contact' %} class="is-active"{% endif %}>
 			<a href="/contact">Contact</a>
 		</li>
 	</ul>
