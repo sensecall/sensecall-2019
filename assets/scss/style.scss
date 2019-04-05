@@ -20,6 +20,9 @@ $h4-font-size:                $font-size-base * 1.5;
 $h5-font-size:                $font-size-base * 1.25;
 $h6-font-size:                $font-size-base;
 
+$hr-border-color: rgba($black, .1) !default;
+$hr-border-width: $border-width * 2;
+
 $paragraph-margin-bottom: 1em;
 $lead-font-size: $font-size-base * 1.5;
 
@@ -77,8 +80,18 @@ footer {
 	margin: 4rem 0;
 }
 
-.nav-links .list-inline-item:not(:last-child) {
-	margin-right: 2rem;
+.nav-links .list-inline-item {
+	&.active a {
+		color: $gray-600;
+
+		&:hover {
+			text-decoration: none;
+			cursor: text;
+		}
+	}
+	&:not(:last-child) {
+		margin-right: 2rem;
+	}
 }
 
 img {
