@@ -1,13 +1,27 @@
-$font-size-base: 19;
-$font-weight-base: $font-weight-light;
-$font-family-base: 'IBM Plex Sans', sans-serif;
-$link-color: #3273dc;
-$body-color: #4a4a4a;
-
 // Required
 @import "node_modules/bootstrap/scss/functions";
 @import "node_modules/bootstrap/scss/variables";
 @import "node_modules/bootstrap/scss/mixins";
+
+$font-family-base: 'IBM Plex Sans', sans-serif;
+$font-size-base: 19;
+
+$link-color: #3273dc;
+
+$body-color: #4a4a4a;
+
+$headings-margin-bottom: $spacer;
+$headings-font-weight: 800;
+$headings-color: #363636;
+$h1-font-size:                $font-size-base * 2.5;
+$h2-font-size:                $font-size-base * 2;
+$h3-font-size:                $font-size-base * 1.75;
+$h4-font-size:                $font-size-base * 1.5;
+$h5-font-size:                $font-size-base * 1.25;
+$h6-font-size:                $font-size-base;
+
+$paragraph-margin-bottom: 1em;
+$lead-font-size: $font-size-base * 1.5;
 
 // Optional
 @import "node_modules/bootstrap/scss/reboot";
@@ -19,12 +33,30 @@ $body-color: #4a4a4a;
 @import "node_modules/bootstrap/scss/utilities";
 
 
-// set up some overrides
+// Fonts
 @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Serif:300,400,400i,700,700i');
 @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,400,400i,700,700i');
 
 body {
 	background: linear-gradient(to bottom left, #f5f9ff, #fff);
+}
+
+@include media-breakpoint-down(lg) {
+	html {
+		font-size: 1rem;
+	}
+}
+
+@include media-breakpoint-down(md) {
+	html {
+		font-size: 0.9rem;
+	}
+}
+
+@include media-breakpoint-down(sm) {
+	html {
+		font-size: 0.8rem;
+	}
 }
 
 a:focus {
@@ -45,10 +77,25 @@ footer {
 	margin: 4rem 0;
 }
 
+.nav-links .list-inline-item:not(:last-child) {
+	margin-right: 2rem;
+}
+
 img {
 	height: auto;
 	max-width: 100%;
 }
+
+
+// Type
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+	&:not(:first-child) {
+		margin-top: $headings-margin-bottom * 2;
+	}
+}
+
+
 
 
 // Animations

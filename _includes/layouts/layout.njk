@@ -6,10 +6,10 @@
 <body class="{{ bodyClass }}" >
 	<div class="container">
 		<header>
-			<nav>
+			<nav class="nav-links">
 				<ul class="list-inline">
 					<li class="list-inline-item">
-						<a href="/"><b>Dan Sensecall</b></a>
+						<a href="/"><b class="text-dark">Dan Sensecall</b></a>
 					</li>
 					<li class="list-inline-item{% if title == 'Writing' %} is-active{% endif %}">
 						<a href="/writing">Writing</a>
@@ -22,7 +22,7 @@
 			
 			{% if page.url == '/' %}
 			<h1 class="font-weight-bold mb-0"><a href="#">{{ title }}</a></h1>
-			{%- if subtitle %}<h2 class="h5 text-muted">{{ subtitle }}</h2>{% endif %}
+			{%- if subtitle %}<h2 class="h5 text-muted mt-0 font-weight-normal">{{ subtitle }}</h2>{% endif %}
 			{% endif %}
 		</header>
 
@@ -43,7 +43,7 @@
 
 		<footer>
 			<div class="row justify-content-between">
-				<nav class="col-sm order-sm-last">
+				<nav class="col-sm order-sm-last nav-links">
 					<ul class="list-inline text-sm-right">
 						<li class="list-inline-item">
 							<a href="https://twitter.com/sensecall">Twitter</a>
