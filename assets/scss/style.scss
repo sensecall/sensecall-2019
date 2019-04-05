@@ -45,6 +45,10 @@ html {
 	height: 100%;
 }
 
+body {
+	background: transparent;
+}
+
 @include media-breakpoint-down(lg) {
 	html {
 		font-size: 1rem;
