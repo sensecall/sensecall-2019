@@ -40,8 +40,9 @@ $lead-font-size: $font-size-base * 1.5;
 @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Serif:300,400,400i,700,700i');
 @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,400,400i,700,700i');
 
-body {
+html {
 	background: linear-gradient(to bottom left, #f5f9ff, #fff);
+	height: 100%;
 }
 
 @include media-breakpoint-down(lg) {
