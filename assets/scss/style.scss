@@ -57,13 +57,13 @@ body {
 
 @include media-breakpoint-down(md) {
 	html {
-		font-size: 0.9rem;
+		font-size: 0.95rem;
 	}
 }
 
 @include media-breakpoint-down(sm) {
 	html {
-		font-size: 0.8rem;
+		font-size: 0.875rem;
 	}
 }
 
