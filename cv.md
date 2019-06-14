@@ -16,3 +16,15 @@ Please feel free to <a href="contact">contact me</a> if there's a role you think
 - User experience designer
 - Interaction designer (that's what I'm doing right now, after all)
 - UX architect
+
+<h2 class="h4">
+	Where I can work:
+</h2>
+
+I'm usually happy to work on-site if it's within 1 hour 30 minutes from my home. That covers places like:
+- London
+- Birmingham
+- Nottingham
+- Leicester
+- Coventry
+- Milton Keynes
