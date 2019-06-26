@@ -4,22 +4,15 @@
 {% block content %}
 <article>
 	<p>
-		<time datetime="{{ date }}">{{ date }}</time>
+		<time datetime="{{ date | w3DateFilter }}">{{ date | dateFilter }}</time>
 	</p>
 
 	{{ content | safe }}
-	
-	{% if site.enableThirdPartyComments %}
-	<hr />
-	<aside class="[ post__body ] [ inner-wrapper ] [ pad-bottom-900 text-500 ]">
-		{% include "partials/global/third-party-comments.njk" %}
-	</aside>
-	{% endif %}
 
 	{% if tags %}
 	<footer>
-		<h2>
-			Filed under
+		<h2 class="h4">
+			Tagged
 		</h2>
 
 		<ul class="list-inline">

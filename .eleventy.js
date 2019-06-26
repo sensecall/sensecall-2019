@@ -1,26 +1,26 @@
+const dateFilter = require('./filters/date-filter.js');
+const w3DateFilter = require('./filters/w3-date-filter.js');
+
 module.exports = function(eleventyConfig) {  
-	eleventyConfig.addFilter("makeUppercase", function(value) {
-		return `<h1>${this.makeUppercase(name)}</h1>`;
-	});
+    eleventyConfig.addFilter('dateFilter', dateFilter);
+    eleventyConfig.addFilter('w3DateFilter', w3DateFilter);
 
-	return {
-		templateFormats: ["md", "njk", "html", "liquid", "jpg"],
+    const now = new Date();
 
-    // If your site lives in a different subdirectory, change this.
-    // Leading or trailing slashes are all normalized away, so don’t worry about it.
-    // If you don’t have a subdirectory, use "" or "/" (they do the same thing)
-    // This is only used for URLs (it does not affect your file structure)
-    pathPrefix: "/",
+    return {
+        templateFormats: ["md", "njk", "html", "liquid", "jpg"],
+        pathPrefix: "/",
 
-    markdownTemplateEngine: "md",
-    htmlTemplateEngine: "njk",
-    dataTemplateEngine: "njk",
-    passthroughFileCopy: true,
-    dir: {
-    	input: ".",
-    	includes: "_includes",
-    	data: "_data",
-    	output: "_site"
-    }
-}
+        markdownTemplateEngine: "md",
+        htmlTemplateEngine: "njk",
+        dataTemplateEngine: "njk",
+        passthroughFileCopy: true,
+        dir:
+        {
+           input: ".",
+           includes: "_includes",
+           data: "_data",
+           output: "_site"
+       }
+   }
 };
