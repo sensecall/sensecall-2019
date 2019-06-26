@@ -3,9 +3,11 @@
 
 {% block content %}
 <article>
-	<p>
-		<time datetime="{{ date | w3DateFilter }}">{{ date | dateFilter }}</time>
+	<p class="text-muted">
+		<time datetime="{{ date | w3DateFilter }}">{{ date | dateFilter }}</time> <span role="text">— {{ helpers.getReadingTime(content) }} minute read</span>
 	</p>
+
+	<hr class="mt-5 mb-5">
 
 	{{ content | safe }}
 
