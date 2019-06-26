@@ -1,7 +1,7 @@
 ---
 title: CV
 subtitle: Freelance user experience and service designer
-layout: layouts/layout.njk
+layout: layouts/page.njk
 ---
 
 Are you a recruiter? Great!

@@ -1,0 +1,37 @@
+{% extends 'layouts/layout.njk' %}
+{% set pageType = 'Post' %}
+
+{% block content %}
+<article>
+	<p>
+		<time datetime="{{ date }}">{{ date }}</time>
+	</p>
+
+	{{ content | safe }}
+	
+	{% if site.enableThirdPartyComments %}
+	<hr />
+	<aside class="[ post__body ] [ inner-wrapper ] [ pad-bottom-900 text-500 ]">
+		{% include "partials/global/third-party-comments.njk" %}
+	</aside>
+	{% endif %}
+
+	{% if tags %}
+	<footer>
+		<h2>
+			Filed under
+		</h2>
+
+		<ul class="list-inline">
+			{% for item in tags %}
+			<li class="list-inline-item">
+				<a href="/tags/{{ item }}">{{ item }}</a>
+			</li>
+			{% endfor %}
+		</ul>
+	</footer>
+	{% endif %}
+</article>
+{% endblock %}
+
+{{ content | safe }}
