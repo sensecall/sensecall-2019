@@ -3,9 +3,11 @@
 
 {% include "head.njk" %}
 
-<body class="{{ bodyClass }}" >
+<body class="{{ bodyClass }}">
 	<div class="container">
-		<header>
+		<a class="sr-only sr-only-focusable" href="#content">Skip to content</a>
+
+		<header role="banner">
 			<nav class="nav-links">
 				<ul class="list-inline">
 					<li class="list-inline-item">
@@ -21,24 +23,24 @@
 			</nav>
 			
 			{% if page.url == '/' %}
-			<h2 class="h1 font-weight-bold mb-0"><a href="#">{{ title }}</a></h2>
-			{%- if subtitle %}<h1 class="h5 text-muted mt-0 font-weight-normal">{{ subtitle }}</h1>{% endif %}
+			{%- if subtitle %}<h1 class="sr-only">{{ subtitle }}</h1>{% endif %}
 			{% endif %}
 		</header>
 
-		<div class="row">
-			<div class="col-md-8">
-				<main role="main">
+		<main id="content" tabindex="-1">
+			<div class="row">
+				<div class="col-md-8">
 					{% if page.url != '/' %}
 					<h1>
 						{{ title }}
 					</h1>
 					{% endif %}
 
-					{{ content | safe }}
-				</main>
+					{% block content %}
+					{% endblock content %}
+				</div>
 			</div>
-		</div>
+		</main>
 
 		<footer>
 			<div class="row justify-content-between">

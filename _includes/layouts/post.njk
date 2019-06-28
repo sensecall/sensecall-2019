@@ -1,0 +1,32 @@
+{% extends 'layouts/layout.njk' %}
+{% set pageType = 'Post' %}
+
+{% block content %}
+<article>
+	<p class="text-muted">
+		<time datetime="{{ date | w3DateFilter }}">{{ date | dateFilter }}</time> <span role="text">— {{ helpers.getReadingTime(content) }} minute read</span>
+	</p>
+
+	<hr class="mt-5 mb-5">
+
+	{{ content | safe }}
+
+	{% if tags %}
+	<footer>
+		<h2 class="h4">
+			Tagged
+		</h2>
+
+		<ul class="list-inline">
+			{% for item in tags %}
+			<li class="list-inline-item">
+				<a href="/tags/{{ item }}">{{ item }}</a>
+			</li>
+			{% endfor %}
+		</ul>
+	</footer>
+	{% endif %}
+</article>
+{% endblock %}
+
+{{ content | safe }}

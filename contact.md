@@ -1,7 +1,7 @@
 ---
 title: Contact
 subtitle: Freelance user experience and service designer
-layout: layouts/layout.njk
+layout: layouts/page.njk
 ---
 
 If you'd like to discuss a role or project it would be great to hear from you.

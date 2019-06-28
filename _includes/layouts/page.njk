@@ -1,0 +1,10 @@
+{% extends 'layouts/layout.njk' %}
+{% set pageType = 'Page' %}
+
+{% block content %}
+<article>
+	{{ content | safe }}
+</article>
+{% endblock %}
+
+{{ content | safe }}

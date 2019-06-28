@@ -1,25 +1,28 @@
 ---
 title: Writing
 subtitle: Freelance user experience and service designer
-layout: layouts/layout.njk
+layout: layouts/page.njk
 ---
 
-{% if collections.post.length %}
-{%- for post in collections.post -%}
-<h2 class="is-size-3">
-	<a href="{{post.url}}">{{ post.data.title }}</a>
-</h2>
+{% set postListHeading = postsHeading %}
+{% set postListItems = collections.postFeed %}
 
-{% if post.data.tags %}
-<ul class="tags">
-	{%- for tag in post.data.tags -%}
-	<li class="tag is-light is-rounded">
-		{{tag}}
-	</li>
-	{%- endfor -%}
-</ul>
-{% endif %}
-{%- endfor -%}
+{% if postListItems.length %}
+<section>
+	<h2>{{ postListHeading }}</h2>
+	<ol class="list-unstyled" reversed>
+		{% for item in postListItems %}
+		<li>
+			<h3>
+				<a href="{{ item.url }}" rel="bookmark">{{ item.data.title }}</a>
+			</h3>
+			<p>
+				<time datetime="{{ item.date | w3DateFilter }}">{{ item.date | dateFilter }}</time>
+			</p>
+		</li>
+		{% endfor %}
+	</ol>
+</section>
 {% else %}
 <p>
 	It's all in my head&hellip; at least until I finish setting up this site.
