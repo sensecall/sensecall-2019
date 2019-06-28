@@ -23,8 +23,7 @@
 			</nav>
 			
 			{% if page.url == '/' %}
-			<h2 class="h1 font-weight-bold mb-0"><a href="#">{{ title }}</a></h2>
-			{%- if subtitle %}<h1 class="h5 text-muted mt-0 font-weight-normal">{{ subtitle }}</h1>{% endif %}
+			{%- if subtitle %}<h1 class="sr-only">{{ subtitle }}</h1>{% endif %}
 			{% endif %}
 		</header>
 
