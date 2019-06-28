@@ -1,6 +1,8 @@
 ---
 title: A simple post
 date: '2099-06-18'
+draft: draft
+permalink: false
 tags:
   - demo-content
   - simple-post
