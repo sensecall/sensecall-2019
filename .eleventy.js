@@ -23,8 +23,12 @@ module.exports = function(eleventyConfig) {
     .slice(0, site.maxPostsPerPage);
   });
 
+  eleventyConfig.addPassthroughCopy("assets/fonts");
+  eleventyConfig.addPassthroughCopy("assets/images");
+  eleventyConfig.addPassthroughCopy("favicon.ico");
+
   return {
-    templateFormats: ["md", "njk", "html", "liquid", "jpg"],
+    templateFormats: ["md", "njk", "html", "liquid", "jpg", "png"],
     pathPrefix: "/",
 
     markdownTemplateEngine: "md",
