@@ -4,7 +4,7 @@
   "description": "Using [11ty](https://github.com/11ty/eleventy/) and [Bulma](https://github.com/jgthms/bulma/) CSS framework",
   "main": ".eleventy.js",
   "dependencies": {
-    "@11ty/eleventy": "^0.11.0",
+    "@11ty/eleventy": "^1.0.2",
     "bootstrap": "^4.5.2",
     "bulma": "^0.7.5",
     "gulp": "^4.0.2",
